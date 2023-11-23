@@ -33,7 +33,7 @@ const Home = () => {
 
   const deleteHandler = (id) => {
     const newList = list.filter((item) => item.id !== id);
-    console.log('newList:', newList);
+    console.log('id:', id);
     dispatch(deletetodo(newList));
   };
 

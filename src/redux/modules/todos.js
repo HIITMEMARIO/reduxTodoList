@@ -3,8 +3,8 @@ import shortid from 'shortid';
 const initialState = [
   {
     id: shortid.generate(),
-    title: '',
-    body: '',
+    title: 'adsfasdf',
+    body: 'asdfasdfasdfasdf',
     isDone: false,
   },
 ];
@@ -41,11 +41,12 @@ const todos = (state = initialState, action) => {
       return [...state, action.payload];
 
     case DELETE_TODO:
-      return [...state, action.payload];
+      // console.log(action.payload);
+      return action.payload;
 
     case SWITCH_TODO:
       return state.map((item) => {
-        if (item.id === state.id) {
+        if (item.id === action.payload) {
           item.isDone = !item.isDone;
         }
         return item;
